@@ -1,0 +1,13 @@
+{
+  "id": "journal-photos",
+  "title": "Le journal de bord",
+  "description": "Les souvenirs photographiques du club",
+  "order": 3,
+  "label": "image",
+  "images": {
+    "05-la-corogne.jpg": {
+      "alt": "Archive intitulée La Corogne dans le journal de bord",
+      "caption": "La Corogne · Journal de bord — 05"
+    }
+  }
+}

@@ -97,6 +97,7 @@ h1 em { color: #71836d; }
 .club-copy h2 em { color: #71836d; }
 .club-copy > p:not(.eyebrow) { font-size: 13px; line-height: 1.9; color: var(--muted); margin-bottom: 15px; max-width: 355px; }
 .club-copy .text-link { margin-top: 7px; }
+.club-links { display: flex; align-items: flex-start; flex-direction: column; gap: 4px; }
 .programme { position: relative; isolation: isolate; background: #e8ecd9; border-radius: 7px; padding: 42px 48px; display: flex; align-items: center; justify-content: space-between; gap: 30px; overflow: hidden; }
 .programme h2 { font-size: 34px; margin-block: 14px; }
 .programme p:not(.eyebrow) { color: #526452; font-size: 12px; line-height: 1.8; }
@@ -123,6 +124,14 @@ footer { background: var(--ink); color: var(--paper); }
 .email-link { display: inline-flex; align-items: center; gap: 25px; font-size: 16px; border-bottom: 1px solid #ffffff55; padding-bottom: 8px; transition: color .3s; }
 .email-link:hover { color: var(--lime); }
 .footer-sail { width: 110px; height: 110px; color: var(--lime); opacity: .8; }
+.footer-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; padding-block: 12px; border-top: 1px solid #ffffff25; }
+.footer-tools h2 { font-family: inherit; font-size: 11px; font-weight: 400; letter-spacing: 0; color: #d2dcd7; }
+.footer-tools-links { display: flex; flex-wrap: wrap; gap: 4px 24px; max-width: 100%; }
+.footer-tool { display: flex; align-items: center; gap: 8px; min-height: 44px; padding-block: 6px; color: #d2dcd7; }
+.footer-tool:hover { color: var(--lime); }
+.footer-tool img { flex: 0 0 48px; width: 48px; height: 28px; padding: 3px; border-radius: 3px; background: #fff; object-fit: contain; }
+.footer-tool strong { display: block; font-size: 11px; font-weight: 500; }
+.footer-tool small, .footer-tool > span:last-child { display: none; }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding-block: 23px; border-top: 1px solid #ffffff25; font-size: 9px; color: #d2dcd7; }
 .footer-bottom a:hover { color: var(--lime); }
 .prototype-label { opacity: .7; }

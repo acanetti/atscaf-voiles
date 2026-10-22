@@ -1,0 +1,13 @@
+{
+  "id": "chausey",
+  "title": "Saint-Malo · Îles Chausey",
+  "description": "Les escales et la vie à bord",
+  "order": 1,
+  "open": true,
+  "label": "photo",
+  "images": {
+    "01-navigation.jpg": {
+      "alt": "Voilier au mouillage devant les îles Chausey"
+    }
+  }
+}

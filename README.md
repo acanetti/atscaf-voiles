@@ -54,6 +54,25 @@ fonctionnent directement depuis les fichiers locaux.
   à confirmer auprès du club ; le bulletin d’inscription est demandé par e-mail.
 - **[Mentions légales](./pages/mentions-legales.html)** : page dédiée avec sommaire
   et informations à compléter avant publication.
+- **[Retours d’expérience](./pages/retours-experience.html)** : quatre publications
+  du blog d’origine (croisière, Chausey, voile légère et permis pratique), avec
+  résumés et liens vers les articles complets. Les archives sont distinguées du
+  programme actuel. Quatre albums dépliables présentent 26 images, agrandissables
+  dans une fenêtre superposée refermable avec la croix, Échap ou un clic à
+  l’extérieur, sans changer de page ; la photo de croisière complète cette sélection.
+  Les flèches latérales et les touches gauche/droite parcourent les photos du
+  même album, avec un compteur et des boutons désactivés aux deux extrémités.
+  Les albums affichent leurs photos en mosaïque sur trois, deux ou une colonne
+  selon la largeur, dans leurs proportions naturelles et sans bandes ajoutées.
+  L’ordre de lecture suit chaque colonne de haut en bas. Les en-têtes présentent
+  le titre, une courte description et le nombre d’images. Le curseur prend la
+  forme d’une main au survol des photos, sans icône superposée.
+  La visionneuse présente les images sans recadrage sur fond sombre, avec des
+  commandes SVG circulaires. Le focus initial est placé sur la fenêtre plutôt
+  que sur la fermeture ; les boutons conservent un focus visible au clavier et
+  ne permettent pas la sélection de texte ni l’affichage d’un curseur de saisie.
+  L’onglet est accessible sur toutes les pages, depuis « Le club » sur l’accueil
+  et depuis les pages croisière et permis.
 - Les activités possèdent chacune leur propre page et leur onglet de navigation.
   Les cartes de l’accueil mènent directement à ces pages, sans fenêtre modale.
 - Navigation commune, indication de l’activité courante, fil d’Ariane et liens
@@ -65,6 +84,9 @@ fonctionnent directement depuis les fichiers locaux.
 - Survols discrets, zoom des photos et transitions douces.
 - Respect de la préférence système de réduction des animations.
 - Liens vers les services d’adhésion existants et contact par e-mail.
+- Pied de page commun avec une rangée discrète de liens vers FFVoile, Windguru (prévisions de vent)
+  et PassageWeather (météo marine). Les logos sont conservés localement dans
+  [outils/](./assets/images/outils/), séparément des albums, et les liens utilisent HTTPS.
 
 Il n’y a ni serveur applicatif, ni base de données, ni espace membre, ni
 réservation ou paiement intégrés. Cette version n’utilise pas de cookies,
@@ -80,30 +102,140 @@ atscaf-voiles/
 |   |-- croisiere.html
 |   |-- permis.html
 |   |-- competitions.html
+|   |-- retours-experience.html
 |   `-- mentions-legales.html
+|-- partials/
+|   |-- header.html
+|   `-- footer.html
+|-- scripts/
+|   |-- generate-albums.mjs
+|   |-- generate-albums.test.mjs
+|   |-- generate-layout.mjs
+|   `-- generate-layout.test.mjs
 `-- assets/
     |-- css/
     |   |-- styles.css
+    |   |-- journal.css
     |   `-- activities.css
     |-- icons/
     |   |-- favicon.svg
     |   `-- compass.svg
+    |-- js/
+    |   |-- albums.generated.js
+    |   `-- journal.js
     `-- images/
-        |-- croisiere.jpg
-        |-- navigation.jpg
-        `-- regate.jpg
+        |-- outils/
+        |   |-- ffv.jpg
+        |   |-- windguru.png
+        |   `-- passageweather.png
+        |-- site/
+        |   |-- croisiere.jpg
+        |   `-- regate.jpg
+        `-- albums/
+            |-- chausey/
+            |-- saint-quentin/
+            |-- journal-de-bord/
+            `-- permis-pratique/
 ```
 
 - [pages/](./pages/) contient les pages annexes.
 - [styles.css](./assets/css/styles.css) définit la direction artistique commune,
   l’accueil, les mentions légales et leurs adaptations mobiles.
 - [activities.css](./assets/css/activities.css) contient les styles propres
-  aux pages d’activités ; il est chargé uniquement sur ces trois pages.
+  aux pages d’activités ; les retours d’expérience réutilisent aussi ses styles
+  d’introduction, de fil d’Ariane et d’albums dépliables.
 - [icons/](./assets/icons/) regroupe les illustrations SVG et le favicon partagé.
 - [images/](./assets/images/) contient les photographies de navigation du club.
+- [journal.css](./assets/css/journal.css) définit les cartes et albums de la page
+  des retours d’expérience, en complément des styles communs et d’activités.
+- [site/](./assets/images/site/) contient les photos de présentation partagées
+  par les pages. La copie identique de la photo de croisière a été supprimée.
+- [albums/](./assets/images/albums/) conserve les 26 images des quatre albums,
+  regroupées par sortie ou thème. Les noms sources sont précédés d’un numéro
+  pour conserver leur ordre ; l’image du tournage est nommée `02-tournage-paris.jpg`.
+  Chaque dossier contient un fichier `album.json` pour le titre, la description,
+  l’ordre d’affichage et les éventuels textes propres à certaines photos.
+  Les images sont locales, sans chargement distant ni lecteur vidéo intégré.
+  Les droits de republication ont été confirmés par le responsable de cette reprise ;
+  conserver les autorisations et compléter les crédits lorsque ceux-ci sont connus.
 
-Le site utilise uniquement HTML et CSS, sans framework ni JavaScript.
-La navigation et les questions dépliables fonctionnent nativement dans le navigateur.
+Le site utilise HTML, CSS et JavaScript sans framework.
+[header.html](./partials/header.html) et [footer.html](./partials/footer.html)
+définissent les éléments communs une seule fois. Le générateur
+[generate-layout.mjs](./scripts/generate-layout.mjs) les intègre dans les pages
+entre les commentaires `shared:header:start/end` et `shared:footer:start/end`.
+Le résultat est du **HTML statique complet** : navigation, contact et outils
+fonctionnent immédiatement, même sans JavaScript et en ouverture locale.
+Les chemins sont adaptés à chaque page, sans URL absolue liée à l’hébergement.
+L’onglet courant et le lien des mentions légales reçoivent automatiquement
+`aria-current="page"` ; les liens du club et de l’adhésion restent des ancres
+locales sur l’accueil.
+
+[journal.js](./assets/js/journal.js) génère les albums et les photos avec des
+boucles à partir de [albums.generated.js](./assets/js/albums.generated.js).
+Le HTML ne contient que deux modèles `template`, pas une liste de photos.
+Ces scripts classiques fonctionnent aussi en ouvrant directement la page locale,
+sans `fetch`, serveur ni module JavaScript côté navigateur.
+La fenêtre native `dialog` conserve le focus au clavier et le restitue à la
+photo après fermeture. Sans JavaScript, un message renvoie vers le blog d’origine.
+Les questions dépliables fonctionnent nativement dans le navigateur.
+
+## Ajouter ou retirer des photos
+
+Le navigateur ne peut pas lister un dossier local. Le script JavaScript
+[generate-albums.mjs](./scripts/generate-albums.mjs) scanne les dossiers et écrit
+l’inventaire, puis le navigateur construit les galeries à partir de cet inventaire.
+
+1. Ajouter, retirer ou renommer les photos dans le dossier concerné sous
+   [albums/](./assets/images/albums/). Formats acceptés : JPEG (`.jpg`, `.jpeg`)
+   et PNG. Préfixer les noms par `01-`, `02-`, etc. pour maîtriser leur ordre.
+2. Depuis la racine du projet, avec **Node.js 18 ou plus récent**, exécuter :
+
+   ```powershell
+   node .\scripts\generate-albums.mjs
+   ```
+
+3. Recharger la page. Les photos, dimensions, légendes numérotées et compteurs
+   sont actualisés automatiquement, sans modifier le HTML ni le JavaScript.
+4. Publier les photos et l’inventaire régénéré avec le reste du site.
+   Ne pas modifier [albums.generated.js](./assets/js/albums.generated.js) à la main.
+
+Pour créer un album, ajouter un dossier contenant les photos et un fichier
+`album.json`, par exemple :
+
+```json
+{
+  "id": "nouvelle-sortie",
+  "title": "Notre nouvelle sortie",
+  "description": "Les souvenirs de notre navigation",
+  "label": "photo",
+  "order": 5,
+  "open": false
+}
+```
+
+L’identifiant doit être unique dans la page. `label` vaut `photo` ou `image`.
+`order` et `open` sont facultatifs. Les fichiers sont triés par nom avec prise
+en compte des nombres. Pour une légende ou un texte alternatif spécifique,
+ajouter une entrée facultative `images` au fichier descriptif :
+
+```json
+{
+  "images": {
+    "01-notre-escale.jpg": {
+      "alt": "Le voilier au mouillage devant le port",
+      "caption": "Notre escale au petit matin"
+    }
+  }
+}
+```
+
+Cette propriété complète les autres champs du fichier ; elle ne constitue pas
+la liste des photos à afficher. Toutes les images du dossier sont découvertes,
+même sans entrée descriptive. Un album vide affiche un message explicite.
+Le script signale les métadonnées manquantes, identifiants dupliqués, images
+illisibles et formats non pris en charge, sans écraser l’inventaire existant.
+Les sous-dossiers imbriqués ne sont pas pris en charge.
 
 ## Modifier le site
 
@@ -111,6 +243,11 @@ La navigation et les questions dépliables fonctionnent nativement dans le navig
   [index.html](./index.html).
 - Modifier les informations de chaque activité directement dans sa page HTML
   du dossier [pages/](./pages/).
+- Ajouter ou modifier les récits et albums dans
+  [retours-experience.html](./pages/retours-experience.html), en conservant les
+  liens sources et les dates d’archives. Les récits restent dans le HTML ; les
+  albums et photos se gèrent dans [albums/](./assets/images/albums/) puis avec
+  le générateur, comme expliqué ci-dessus.
 - Adapter les couleurs et les styles communs dans
   [styles.css](./assets/css/styles.css).
   Les principales couleurs sont définies dans `:root`.
@@ -118,10 +255,23 @@ La navigation et les questions dépliables fonctionnent nativement dans le navig
   [activities.css](./assets/css/activities.css).
 - Compléter les informations légales dans
   [mentions-legales.html](./pages/mentions-legales.html).
-- Pour modifier l’en-tête ou le pied de page, mettre à jour les cinq pages :
-  ces éléments sont volontairement présents dans chaque fichier HTML pour garder
-  un site statique sans outil de compilation ni injection JavaScript.
-- Indiquer l’onglet actif avec `aria-current="page"` sur chaque page d’activité.
+- Pour modifier l’en-tête ou le pied de page, éditer uniquement
+  [header.html](./partials/header.html) ou [footer.html](./partials/footer.html),
+  puis exécuter :
+
+  ```powershell
+  node .\scripts\generate-layout.mjs
+  ```
+
+  Dans les fichiers communs, écrire les liens et les chemins d’images depuis la
+  racine du projet (`pages/…`, `assets/…`, `index.html#club`). Le générateur les
+  rend relatifs à chaque page. Ne pas modifier les blocs générés directement :
+  leurs changements seraient écrasés lors de la prochaine génération.
+- Pour une nouvelle page, reprendre les deux paires de commentaires `shared`
+  d’une page existante et conserver le contenu spécifique en dehors de ces blocs.
+  Le générateur traite l’accueil et tous les fichiers HTML directement sous
+  [pages/](./pages/). Ajouter son éventuel lien dans le fichier d’en-tête commun,
+  puis régénérer. Ne pas renseigner `aria-current` dans les fichiers communs.
 
 Les liens sont relatifs : depuis l’accueil, utiliser `pages/…` et `assets/…` ;
 depuis une page annexe, utiliser `../index.html`, `../assets/…` et le nom de
@@ -129,17 +279,32 @@ fichier pour une autre page du même dossier.
 
 ## Vérifications
 
-Il n’y a pas de suite de tests automatisés configurée. Après une modification :
+Les tests des générateurs utilisent uniquement les outils intégrés à Node.js :
 
-1. Vérifier les cinq pages sur ordinateur et mobile, sans débordement horizontal.
+```powershell
+node --test .\scripts\generate-albums.test.mjs .\scripts\generate-layout.test.mjs
+```
+
+Ils vérifient notamment la découverte des ajouts et suppressions, les dimensions,
+le tri, les noms contenant des espaces et les erreurs de fichiers ou de métadonnées.
+Ils contrôlent aussi les liens relatifs, l’onglet actif, la mise à jour de toutes
+les pages depuis un fichier commun et la stabilité des générations successives.
+Après une modification :
+
+1. Vérifier les six pages sur ordinateur et mobile, sans débordement horizontal.
 2. Tester chaque onglet, les cartes de l’accueil, le retour à l’accueil et les
    liens vers les autres activités.
 3. Vérifier la navigation au clavier, les questions dépliables et l’onglet actif.
 4. Tester les ancres, les liens externes et le chargement des images et des styles.
 5. Vérifier le rendu avec la réduction des animations activée.
+6. Vérifier les blocs communs, l’onglet actif et les logos des outils en
+   ouverture locale et après hébergement dans un sous-dossier. Sans JavaScript,
+   vérifier que la navigation, le contact et les outils restent disponibles.
 
-Les anciennes fenêtres modales et leur script ont été supprimés : aucun environnement
-Node.js n’est nécessaire pour consulter ou modifier le site.
+Les anciennes fenêtres modales des activités ont été supprimées. Seul
+l’agrandissement des photos utilise une fenêtre superposée ; aucun environnement
+Node.js n’est nécessaire pour consulter le site. Node.js sert uniquement à
+régénérer les albums et les blocs communs et à exécuter leurs tests, pas à l’hébergement.
 
 ## Avant la mise en ligne
 
@@ -156,6 +321,9 @@ Node.js n’est nécessaire pour consulter ou modifier le site.
 - Retirer les libellés de maquette et vérifier les formulaires d’adhésion liés.
 - Choisir un hébergement statique avec HTTPS et publier [index.html](./index.html)
   ainsi que les dossiers [pages/](./pages/) et [assets/](./assets/) en conservant
-  leurs chemins relatifs.
+  leurs chemins relatifs. Régénérer les albums si les photos ou leurs descriptions
+  ont changé, et les blocs communs si l’en-tête ou le pied de page ont changé.
+  Les dossiers [partials/](./partials/) et [scripts/](./scripts/) ne sont pas
+  nécessaires sur l’hébergement.
 - Revoir les informations de confidentialité si l’hébergement ou de nouvelles
   fonctionnalités introduisent des journaux techniques, des cookies ou des traceurs.
