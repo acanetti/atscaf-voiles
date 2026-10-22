@@ -215,7 +215,7 @@ const journalAlbums = [
       },
       {
         "src": "../assets/images/albums/permis-pratique/02-tournage-paris.jpg",
-        "alt": "Tom Cruise et Henry Cavill sur le tournage de Mission Impossible 6 à Paris, image jointe au récit d’origine",
+        "alt": "Tom Cruise et Henry Cavill sur le tournage de Mission Impossible 6 à Paris, évoqué dans le récit de Christian",
         "caption": "Le tournage à Paris évoqué dans le récit ; cette image ne représente pas une activité du club.",
         "width": 939,
         "height": 626

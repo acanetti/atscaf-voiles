@@ -5,7 +5,7 @@ Site de l’association [ATSCAF Voile Paris](./index.html).
 L’objectif : un site simple, accueillant et facile à maintenir, qui donne envie
 de découvrir les activités et de rejoindre le club.
 
-## Consulter la maquette
+## Consulter le site
 
 Ouvrir [index.html](./index.html) dans un navigateur récent. Sous Windows, depuis
 le dossier du projet :
@@ -55,8 +55,8 @@ fonctionnent directement depuis les fichiers locaux.
 - **[Mentions légales](./pages/mentions-legales.html)** : page dédiée avec sommaire
   et informations à compléter avant publication.
 - **[Retours d’expérience](./pages/retours-experience.html)** : quatre publications
-  du blog d’origine (croisière, Chausey, voile légère et permis pratique), avec
-  résumés et liens vers les articles complets. Les archives sont distinguées du
+  du club (croisière, Chausey, voile légère et permis pratique), avec
+  résumés et liens vers les albums et activités. Les archives sont distinguées du
   programme actuel. Quatre albums dépliables présentent 26 images, agrandissables
   dans une fenêtre superposée refermable avec la croix, Échap ou un clic à
   l’extérieur, sans changer de page ; la photo de croisière complète cette sélection.
@@ -151,12 +151,12 @@ atscaf-voiles/
 - [site/](./assets/images/site/) contient les photos de présentation partagées
   par les pages. La copie identique de la photo de croisière a été supprimée.
 - [albums/](./assets/images/albums/) conserve les 26 images des quatre albums,
-  regroupées par sortie ou thème. Les noms sources sont précédés d’un numéro
+  regroupées par sortie ou thème. Les noms des fichiers sont précédés d’un numéro
   pour conserver leur ordre ; l’image du tournage est nommée `02-tournage-paris.jpg`.
   Chaque dossier contient un fichier `album.json` pour le titre, la description,
   l’ordre d’affichage et les éventuels textes propres à certaines photos.
   Les images sont locales, sans chargement distant ni lecteur vidéo intégré.
-  Les droits de republication ont été confirmés par le responsable de cette reprise ;
+  Les droits de publication ont été confirmés par le responsable du projet ;
   conserver les autorisations et compléter les crédits lorsque ceux-ci sont connus.
 
 Le site utilise HTML, CSS et JavaScript sans framework.
@@ -177,7 +177,7 @@ Le HTML ne contient que deux modèles `template`, pas une liste de photos.
 Ces scripts classiques fonctionnent aussi en ouvrant directement la page locale,
 sans `fetch`, serveur ni module JavaScript côté navigateur.
 La fenêtre native `dialog` conserve le focus au clavier et le restitue à la
-photo après fermeture. Sans JavaScript, un message renvoie vers le blog d’origine.
+photo après fermeture. Sans JavaScript, un message invite à l’activer pour consulter les albums.
 Les questions dépliables fonctionnent nativement dans le navigateur.
 
 ## Ajouter ou retirer des photos
@@ -245,7 +245,7 @@ Les sous-dossiers imbriqués ne sont pas pris en charge.
   du dossier [pages/](./pages/).
 - Ajouter ou modifier les récits et albums dans
   [retours-experience.html](./pages/retours-experience.html), en conservant les
-  liens sources et les dates d’archives. Les récits restent dans le HTML ; les
+  liens internes et les dates d’archives. Les récits restent dans le HTML ; les
   albums et photos se gèrent dans [albums/](./assets/images/albums/) puis avec
   le générateur, comme expliqué ci-dessus.
 - Adapter les couleurs et les styles communs dans
@@ -308,7 +308,7 @@ régénérer les albums et les blocs communs et à exécuter leurs tests, pas à
 
 ## Avant la mise en ligne
 
-**Le projet reste une maquette, pas une version prête à publier.**
+**Les informations légales doivent être complétées avant publication.**
 
 - Faire valider les contenus, tarifs, dates et modalités d’adhésion par le club.
 - Compléter et faire valider les mentions légales : éditeur juridiquement
@@ -318,7 +318,7 @@ régénérer les albums et les blocs communs et à exécuter leurs tests, pas à
   les autorisations concernant les personnes reconnaissables.
 - Retirer l’encart provisoire et la directive `noindex` de la page des mentions
   légales une fois son contenu finalisé et validé.
-- Retirer les libellés de maquette et vérifier les formulaires d’adhésion liés.
+- Vérifier les formulaires d’adhésion liés.
 - Choisir un hébergement statique avec HTTPS et publier [index.html](./index.html)
   ainsi que les dossiers [pages/](./pages/) et [assets/](./assets/) en conservant
   leurs chemins relatifs. Régénérer les albums si les photos ou leurs descriptions
