@@ -135,6 +135,33 @@ dialog .dialog-practical { margin-block: 18px 28px; padding-left: 15px; border-l
 .dialog-close:hover { background: var(--lime); }
 .sr-only, .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip-link:focus { position: fixed; z-index: 5; top: 12px; left: 12px; background: var(--lime); padding: 15px; }
+.legal-intro { padding-block: 24px 44px; border-bottom: 1px solid var(--line); }
+.legal-intro > .eyebrow { margin-top: 42px; }
+.legal-intro h1 { font-size: clamp(48px, 6vw, 80px); margin-block: 16px 24px; }
+.legal-lead { color: var(--muted); font-size: 15px; line-height: 1.8; }
+.legal-notice { display: flex; align-items: flex-start; gap: 17px; margin-block: 32px 56px; padding: 23px 26px; background: #e8ecd9; border-radius: 6px; }
+.legal-notice-mark { display: grid; place-items: center; flex-shrink: 0; width: 24px; height: 24px; border: 1px solid #788c75; border-radius: 50%; font-family: Georgia, serif; font-style: italic; }
+.legal-notice strong { font-size: 13px; font-weight: 600; }
+.legal-notice p { margin-top: 7px; font-size: 12px; line-height: 1.8; color: #526452; }
+.legal-layout { display: grid; grid-template-columns: 240px minmax(0, 720px); justify-content: space-between; gap: 55px; }
+.legal-summary { align-self: start; position: sticky; top: 32px; }
+.legal-summary ol { margin: 20px 0 0; padding-left: 22px; color: #71836d; font-size: 12px; }
+.legal-summary li { padding: 8px 0 8px 7px; }
+.legal-summary a { color: var(--muted); line-height: 1.6; transition: color .3s; }
+.legal-summary a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.legal-content section { padding-bottom: 38px; margin-bottom: 38px; border-bottom: 1px solid var(--line); }
+.legal-content section:last-child { margin-bottom: 0; }
+.legal-content h2 { font-size: clamp(29px, 3vw, 39px); margin-block: 12px 21px; letter-spacing: -.04em; }
+.legal-content h3 { font-size: 15px; font-weight: 600; margin: 25px 0 12px; }
+.legal-content p:not(.eyebrow) { font-size: 14px; line-height: 1.9; color: var(--muted); margin-top: 15px; }
+.legal-content a:not(.text-link) { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; transition: color .3s; }
+.legal-content a:not(.text-link):hover { color: #526a3e; }
+.legal-facts { margin: 24px 0 0; }
+.legal-facts > div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 22px; padding: 17px 0; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.8; }
+.legal-facts dt { font-weight: 600; }
+.legal-facts dd { margin: 0; color: var(--muted); }
+.to-complete { display: inline-block; padding: 1px 7px; margin-right: 4px; border-radius: 3px; background: #e8ecd9; color: #435d37; font-size: 11px; font-weight: 600; }
+.legal-return { padding-block: 20px 72px; display: flex; justify-content: flex-end; }
 @keyframes dialog-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy { animation: appear .85s var(--ease) both; }
@@ -159,6 +186,11 @@ dialog .dialog-practical { margin-block: 18px 28px; padding-left: 15px; border-l
   .join { gap: 40px; }
 }
 @media (max-width: 800px) {
+  .legal-layout { grid-template-columns: 1fr; gap: 36px; }
+  .legal-summary { position: static; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
+  .legal-summary ol { columns: 2; column-gap: 30px; }
+  .legal-summary li { break-inside: avoid; }
+  .legal-notice { margin-bottom: 36px; }
   .wrap { width: calc(100% - 40px); }
   .site-header { padding: 18px 20px; min-height: 85px; gap: 15px; flex-wrap: wrap; }
   .brand-mark { width: 32px; }
@@ -198,6 +230,14 @@ dialog .dialog-practical { margin-block: 18px 28px; padding-left: 15px; border-l
   .join-step > span:nth-child(2) > span { font-size: 10px; }
 }
 @media (max-width: 540px) {
+  .legal-intro { padding-block: 20px 32px; }
+  .legal-intro > .eyebrow { margin-top: 30px; }
+  .legal-lead { font-size: 13px; }
+  .legal-lead br { display: none; }
+  .legal-notice { padding: 20px; gap: 12px; }
+  .legal-summary ol { columns: 1; }
+  .legal-facts > div { grid-template-columns: 1fr; gap: 5px; }
+  .legal-return { justify-content: flex-start; padding-bottom: 50px; }
   .hero { grid-template-columns: 1fr; gap: 32px; }
   .hero-copy { padding-top: 23px; }
   .hero-copy .eyebrow { font-size: 9px; }
