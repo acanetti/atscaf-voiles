@@ -39,10 +39,15 @@ fonctionnent directement depuis les fichiers locaux.
 - **[Permis côtier](./pages/permis.html)** : parcours de formation (16 h de
   préparation, 6 h de révision et 2 h de pilotage), programme des huit séances,
   modalités de pré-inscription, pièces du dossier et liens vers les CERFA.
-  Le calendrier de mars à juin 2026 est présenté comme une session passée.
-  Le tarif annoncé de 275 € et les frais annexes (78 € et 30 €) sont datés de
-  2026 ; les prochaines dates et le montant du règlement sont à confirmer
-  auprès du club avant paiement.
+  La session 2027 est prévue sur un ou deux week-ends entre fin janvier et
+  mi-février, à Paris ; les dates précises et le lieu sont à confirmer.
+  Le tarif de la session 2027 est de 300 €, dont la moitié (150 €) est à régler
+  à l’inscription. Avec les frais annexes (78 € et 30 €), le budget indicatif
+  est de 408 € hors adhésions. La session nécessite au moins 10 candidats :
+  si ce minimum n’est pas atteint à la clôture des inscriptions, elle est
+  annulée et l’intégralité des sommes avancées est remboursée sans frais.
+  Les prochaines dates, les frais annexes et les modalités de règlement
+  sont à confirmer auprès du club avant paiement.
   Le programme est présenté en cartes thématiques avec icônes SVG, numéros
   de séance et points clés, sur deux colonnes lorsque l’espace le permet
   et une colonne sur les écrans étroits.
