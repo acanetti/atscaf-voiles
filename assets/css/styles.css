@@ -168,6 +168,8 @@ footer { background: var(--ink); color: var(--paper); }
 .legal-summary a { color: var(--muted); line-height: 1.6; transition: color .3s; }
 .legal-summary a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 .legal-content section { padding-bottom: 38px; margin-bottom: 38px; border-bottom: 1px solid var(--line); }
+.legal-content #editeur { padding-bottom: 12px; margin-bottom: 12px; }
+#editeur .legal-facts > div:last-child { padding-bottom: 0; }
 .legal-content section:last-child { margin-bottom: 0; }
 .legal-content h2 { font-size: clamp(29px, 3vw, 39px); margin-block: 12px 21px; letter-spacing: -.04em; }
 .legal-content h3 { font-size: 15px; font-weight: 600; margin: 25px 0 12px; }

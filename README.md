@@ -94,7 +94,9 @@ fonctionnent directement depuis les fichiers locaux.
   Les prochaines dates et les frais sont
   à confirmer auprès du club ; le bulletin d’inscription est demandé par e-mail.
 - **[Mentions légales](./pages/mentions-legales.html)** : page dédiée avec sommaire
-  et informations à compléter avant publication.
+  et informations à compléter avant publication. L’hébergeur est renseigné :
+  SARL E-monsite, 19, rue Lamartine, 80000 Amiens, France. Les coordonnées
+  téléphoniques et le tarif de l’appel sont affichés en texte.
 - **[Retours d’expérience](./pages/retours-experience.html)** : trois publications
   du club (croisière, Chausey et permis pratique), avec
   résumés et liens vers les albums et activités. Les archives sont distinguées du
