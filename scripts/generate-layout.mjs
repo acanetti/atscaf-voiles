@@ -6,7 +6,7 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 function renderPartial(template, page) {
   const withCurrentPage = template.replace(/<a\b[^>]*href="([^"]+)"[^>]*>/g, (tag, href) => {
-    if (page !== "index.html" && href === page) {
+    if ((page !== "index.html" && href === page) || (page === "index.html" && href === "index.html#club")) {
       return tag.replace(/>$/, ' aria-current="page">');
     }
     return tag;

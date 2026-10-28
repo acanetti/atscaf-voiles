@@ -12,6 +12,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #6f8c36; outline-offs
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 svg { display: block; }
 h1, h2, p { margin: 0; }
+p:not(.eyebrow) { text-align: justify; }
 h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.055em; }
 h2 { font-size: clamp(34px, 3.4vw, 50px); line-height: 1.12; }
 em { font-weight: 400; }
@@ -20,9 +21,7 @@ em { font-weight: 400; }
 .eyebrow { font-size: 10px; letter-spacing: .16em; font-weight: 650; line-height: 1.6; }
 .site-header { width: min(1440px, 100%); margin-inline: auto; min-height: 102px; padding: 20px 56px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand-mark { width: 40px; height: 44px; }
-.brand > span { font-size: 11px; letter-spacing: .13em; line-height: 1.6; }
-.brand strong { display: block; font-size: 18px; letter-spacing: -.025em; font-weight: 600; }
+.brand-mark { width: 120px; height: auto; object-fit: contain; }
 .site-header nav { display: flex; flex-wrap: wrap; gap: 28px; }
 .site-header nav a { font-size: 12px; position: relative; padding-block: 8px; }
 .site-header nav a::after, .text-link::after { content: ""; position: absolute; inset: auto 0 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
@@ -38,7 +37,8 @@ em { font-weight: 400; }
 .button-outline { border: 1px solid #788c75; position: relative; z-index: 1; }
 .button-outline:hover { background: var(--ink); color: white; }
 .text-link { font-size: 12px; font-weight: 600; position: relative; padding-block: 8px; display: inline-flex; align-items: center; gap: 18px; }
-.hero { display: grid; grid-template-columns: 1fr 1.08fr; gap: 32px; padding-block: 20px 44px; min-height: 658px; }
+.hero { display: flex; flex-direction: column; gap: 16px; padding-block: 20px 44px; }
+.hero > .text-link { align-self: flex-start; }
 .hero-copy { padding-block: 34px 8px; }
 .hero-copy .eyebrow { display: flex; align-items: center; gap: 10px; }
 .tiny-line { width: 23px; height: 1px; background: currentColor; }
@@ -70,6 +70,9 @@ h1 em { color: #71836d; }
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 35px; }
 .section-heading h2 { margin-top: 13px; }
 .section-heading > p { font-size: 12px; color: var(--muted); line-height: 1.8; padding-bottom: 3px; }
+.activities.section { padding-top: 32px; }
+.activities .section-heading { justify-content: center; text-align: center; }
+.activities .section-heading h2 { margin-top: 0; font-size: clamp(28px, 3vw, 42px); }
 .activity-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 23px; }
 .activity-card { display: block; padding: 0; text-align: left; background: transparent; border: 0; cursor: pointer; border-radius: 7px; transition: transform .4s var(--ease); }
 .card-visual { position: relative; display: block; height: 230px; overflow: hidden; background: #74969c; border-radius: 6px; }
@@ -97,17 +100,31 @@ h1 em { color: #71836d; }
 .club-copy h2 em { color: #71836d; }
 .club-copy > p:not(.eyebrow) { font-size: 13px; line-height: 1.9; color: var(--muted); margin-bottom: 15px; max-width: 355px; }
 .club-copy .text-link { margin-top: 7px; }
-.club-links { display: flex; align-items: flex-start; flex-direction: column; gap: 4px; }
+.club-links { display: flex; align-items: flex-start; flex-direction: column; gap: 4px; margin-top: 16px; }
+.club-organisation { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: start; }
+.club-organisation.section { padding-top: 0; }
+.club-organisation h2 { margin-bottom: 24px; font-size: clamp(26px, 2.4vw, 34px); }
+.club-organisation-intro p { font-size: 13px; line-height: 1.9; color: var(--muted); }
+.club-organisation-intro p + p { margin-top: 16px; }
+.club-organisation-intro strong { color: var(--ink); }
+.club-bureau h3 { margin: 0 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 400; }
+.bureau-list { list-style: none; margin: 0; padding: 0; }
+.bureau-list li { padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 13px; line-height: 1.6; }
+.bureau-list span { color: var(--muted); }
 .programme { position: relative; isolation: isolate; background: #e8ecd9; border-radius: 7px; padding: 42px 48px; display: flex; align-items: center; justify-content: space-between; gap: 30px; overflow: hidden; }
 .programme h2 { font-size: 34px; margin-block: 14px; }
 .programme p:not(.eyebrow) { color: #526452; font-size: 12px; line-height: 1.8; }
 .route-decoration { position: absolute; width: 250px; right: 24px; top: 12px; color: #647a4340; z-index: -1; }
 .join { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: center; }
+.join.join-panel { background: #e8ecd9; border-radius: 7px; padding: clamp(24px, 4vw, 48px); margin-bottom: 64px; }
 .join h2 { margin-block: 13px 20px; font-size: 58px; }
+.join-intro > .eyebrow { font-size: 12px; }
 .join-intro > p:not(.eyebrow) { color: var(--muted); font-size: 13px; line-height: 1.8; }
-.price { display: flex; align-items: center; gap: 15px; margin-top: 25px; }
-.price strong { font-family: Georgia, serif; font-size: 38px; font-weight: 400; letter-spacing: -.04em; }
-.price span { font-size: 10px; line-height: 1.7; color: var(--muted); }
+.join-intro #reglement, .join-intro #reglement + p { margin-top: 16px; }
+.join-intro #reglement + p a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.price { display: flex; align-items: center; justify-content: center; gap: 15px; margin-block: 25px 16px; color: #1e4f91; font-weight: 700; }
+.price strong { font-family: "Segoe UI", Arial, sans-serif; font-size: 46px; font-weight: 700; letter-spacing: -.04em; white-space: nowrap; }
+.price span { font-size: 14px; line-height: 1.7; color: inherit; }
 .join-intro .price-note { font-size: 10px !important; max-width: 300px; margin-top: 10px; }
 .join-step { display: flex; gap: 22px; align-items: center; border-bottom: 1px solid var(--line); padding-block: 30px; transition: padding .3s var(--ease), background .3s; }
 .join-step:first-child { border-top: 1px solid var(--line); }
@@ -173,7 +190,7 @@ footer { background: var(--ink); color: var(--paper); }
   .wrap { width: calc(100% - 64px); }
   .site-header { padding-inline: 32px; flex-wrap: wrap; }
   .site-header nav { order: 3; width: 100%; justify-content: center; gap: 22px; padding-top: 10px; border-top: 1px solid var(--line); }
-  .hero { gap: 25px; min-height: 600px; }
+  .hero { gap: 25px; }
   .hero-visual { min-height: 535px; }
   .hero-copy { padding-top: 25px; }
   h1 { font-size: 65px; }
@@ -186,6 +203,7 @@ footer { background: var(--ink); color: var(--paper); }
   .join { gap: 40px; }
 }
 @media (max-width: 800px) {
+  .club-organisation { grid-template-columns: 1fr; gap: 30px; }
   .legal-layout { grid-template-columns: 1fr; gap: 36px; }
   .legal-summary { position: static; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
   .legal-summary ol { columns: 2; column-gap: 30px; }
@@ -193,11 +211,10 @@ footer { background: var(--ink); color: var(--paper); }
   .legal-notice { margin-bottom: 36px; }
   .wrap { width: calc(100% - 40px); }
   .site-header { padding: 18px 20px; min-height: 85px; gap: 15px; flex-wrap: wrap; }
-  .brand-mark { width: 32px; }
-  .brand strong { font-size: 16px; }
+  .brand-mark { width: 96px; }
   .site-header nav { padding-block: 7px; gap: 8px 22px; }
   .button-small { font-size: 10px; padding: 11px 13px; gap: 10px; }
-  .hero { padding-top: 8px; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .hero { padding-top: 8px; gap: 20px; }
   h1 { font-size: clamp(43px,7vw,60px); }
   .hero-copy .eyebrow { font-size: 8px; letter-spacing: .1em; }
   .tiny-line { display: none; }
@@ -238,7 +255,7 @@ footer { background: var(--ink); color: var(--paper); }
   .legal-summary ol { columns: 1; }
   .legal-facts > div { grid-template-columns: 1fr; gap: 5px; }
   .legal-return { justify-content: flex-start; padding-bottom: 50px; }
-  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .hero { gap: 32px; }
   .hero-copy { padding-top: 23px; }
   .hero-copy .eyebrow { font-size: 9px; }
   h1 { font-size: clamp(56px,14vw,76px); margin-top: 22px; }

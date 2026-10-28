@@ -5,6 +5,9 @@
 .journal-section > p:not(.eyebrow) { margin-top: 18px; max-width: 740px; color: var(--muted); font-size: 14px; line-height: 1.9; }
 .journal-stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 28px; }
 .journal-stories article { min-width: 0; }
+.story-details { margin-top: 16px; }
+.story-body { margin-top: 20px; }
+.story-body ul { margin-block: 16px; padding-left: 24px; color: var(--muted); }
 .journal-stories h3 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: 400; letter-spacing: -.035em; margin-block: 16px 12px; }
 .journal-stories p { color: var(--muted); font-size: 14px; line-height: 1.9; }
 .journal-stories .story-meta { font-size: 11px; margin-top: 18px; }

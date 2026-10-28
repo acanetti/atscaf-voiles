@@ -88,37 +88,6 @@ const journalAlbums = [
     ]
   },
   {
-    "id": "saint-quentin",
-    "title": "Saint-Quentin-en-Yvelines",
-    "description": "Une séance de voile légère en images",
-    "label": "photo",
-    "order": 2,
-    "open": false,
-    "photos": [
-      {
-        "src": "../assets/images/albums/saint-quentin/01-img-3165.jpg",
-        "alt": "Saint-Quentin-en-Yvelines, photo 1",
-        "caption": "Saint-Quentin-en-Yvelines — 01",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "../assets/images/albums/saint-quentin/02-img-3160.jpg",
-        "alt": "Saint-Quentin-en-Yvelines, photo 2",
-        "caption": "Saint-Quentin-en-Yvelines — 02",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "../assets/images/albums/saint-quentin/03-img-3166.jpg",
-        "alt": "Saint-Quentin-en-Yvelines, photo 3",
-        "caption": "Saint-Quentin-en-Yvelines — 03",
-        "width": 1440,
-        "height": 1920
-      }
-    ]
-  },
-  {
     "id": "journal-photos",
     "title": "Le journal de bord",
     "description": "Les souvenirs photographiques du club",
@@ -176,49 +145,18 @@ const journalAlbums = [
         "height": 1920
       },
       {
-        "src": "../assets/images/albums/journal-de-bord/08-dscn0259.jpg",
+        "src": "../assets/images/albums/journal-de-bord/09-telechargement-1-.jpg",
         "alt": "Le journal de bord, image 8",
         "caption": "Le journal de bord — 08",
-        "width": 1920,
-        "height": 1440
-      },
-      {
-        "src": "../assets/images/albums/journal-de-bord/09-telechargement-1-.jpg",
-        "alt": "Le journal de bord, image 9",
-        "caption": "Le journal de bord — 09",
         "width": 275,
         "height": 183
       },
       {
         "src": "../assets/images/albums/journal-de-bord/10-100-0017.jpg",
-        "alt": "Le journal de bord, image 10",
-        "caption": "Le journal de bord — 10",
+        "alt": "Le journal de bord, image 9",
+        "caption": "Le journal de bord — 09",
         "width": 1920,
         "height": 1442
-      }
-    ]
-  },
-  {
-    "id": "permis-photos",
-    "title": "Le permis pratique",
-    "description": "Les images qui accompagnent le récit de Christian",
-    "label": "image",
-    "order": 4,
-    "open": false,
-    "photos": [
-      {
-        "src": "../assets/images/albums/permis-pratique/01-permis.jpg",
-        "alt": "Illustration de l’article sur le permis pratique",
-        "caption": "L’illustration du récit de Christian",
-        "width": 317,
-        "height": 159
-      },
-      {
-        "src": "../assets/images/albums/permis-pratique/02-tournage-paris.jpg",
-        "alt": "Tom Cruise et Henry Cavill sur le tournage de Mission Impossible 6 à Paris, évoqué dans le récit de Christian",
-        "caption": "Le tournage à Paris évoqué dans le récit ; cette image ne représente pas une activité du club.",
-        "width": 939,
-        "height": 626
       }
     ]
   }

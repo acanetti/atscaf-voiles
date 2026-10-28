@@ -19,13 +19,24 @@ fonctionnent directement depuis les fichiers locaux.
 
 ## Pages et fonctionnalités
 
-- **[Accueil](./index.html)** : présentation du club, activités, demande du
-  programme, adhésion et contact. Les deux adhésions obligatoires sont
+- **[Accueil / Le club](./index.html)** : présentation de l’association et de la
+  vie en équipage avec la photo de Chausey, puis activités, adhésion, fonctionnement
+  de la section et contact. La section « Le fonctionnement de la section »,
+  accessible depuis la présentation du club, rappelle le principe du bénévolat,
+  décrit l’organisation et présente les six membres du bureau et leurs fonctions.
+  Les modalités d’inscription sont regroupées dans le bandeau vert, à la place
+  de l’ancien appel à demander le programme. « Le club » est le premier onglet du menu
+  sur toutes les pages et indique la page courante sur l’accueil.
+  Les accroches promotionnelles de l’introduction, des activités et du club,
+  ainsi que le bouton de demande du programme, ont été retirés.
+  Les deux adhésions obligatoires sont
   distinguées : ATSCAF Grand Paris (cotisation séparée) et section voile
   (73 € pour 2026–2027, licence FFVoile offerte), du 1er septembre au 31 août.
   Les démarches, le règlement séparé du formulaire et la PAF par activité
   sont précisés dans la section adhésion. Les coordonnées bancaires pour le
   virement figurent dans cette même section.
+- L’ancienne adresse [club.html](./pages/club.html) redirige vers l’accueil
+  pour préserver les liens existants.
 - **[Croisière](./pages/croisiere.html)** : présentation de Pandora, Sun Fast 36
   de l’ASCO basé à Saint-Malo, rythme des sorties et exemples de destinations ;
   vie à bord, inscription et accès aux bulletins d’adhésion, liste d’équipement
@@ -33,36 +44,65 @@ fonctionnent directement depuis les fichiers locaux.
   budget, sécurité, entretien, formation des chefs de bord et conditions
   d’annulation.
   Le calendrier 2026 présente les bords d’automne et les croisières d’été,
-  avec les périodes sans bord et le désarmement. Le planning de printemps
+  précédés d’une présentation du rythme annuel : week-ends de printemps et
+  d’automne au départ de Saint-Malo, hivernage et croisières estivales généralement
+  d’une semaine, parfois hors de France.
+  Il indique aussi les périodes sans bord et le désarmement. Le planning de printemps
   n’est pas disponible. Les dates sont statiques, sans suivi des disponibilités ;
   actualiser les tableaux lors d’une modification du programme.
 - **[Permis côtier](./pages/permis.html)** : parcours de formation (16 h de
   préparation, 6 h de révision et 2 h de pilotage), programme des huit séances,
   modalités de pré-inscription, pièces du dossier et liens vers les CERFA.
-  La session 2027 est prévue sur un ou deux week-ends entre fin janvier et
-  mi-février, à Paris ; les dates précises et le lieu sont à confirmer.
-  Le tarif de la session 2027 est de 300 €, dont la moitié (150 €) est à régler
-  à l’inscription. Avec les frais annexes (78 € et 30 €), le budget indicatif
-  est de 408 € hors adhésions. La session nécessite au moins 10 candidats :
+  Selon la fiche Word « Fiche info Permis Cotier 2027 - revu Z.docx », la session
+  2027 comprend sept séances regroupées sur deux jours, sur un ou deux week-ends,
+  au CISP Kellermann, à Paris 13e. La période envisagée est le dernier week-end
+  de janvier ou un week-end de la deuxième quinzaine de février ; les dates
+  précises restent à confirmer. La révision avec le bateau-école est prévue
+  à partir de fin février, en semaine, au port de l’Arsenal.
+  Le tarif de 290 € inclut un code Vagnon. L’acompte de 150 € valide l’inscription ;
+  le solde de 140 € et le dossier complet sont attendus avant le 10 janvier 2027.
+  La pré-inscription par e-mail doit être demandée avant le 30 novembre 2026.
+  Les règlements se font par virement ; l’acompte n’est pas remboursable en cas
+  de désistement du candidat. Le certificat médical doit utiliser le CERFA
+  imprimé en recto-verso. Avec les frais annexes (78 € et 30 €), le budget
+  indicatif est de 398 € hors adhésions. La session nécessite au moins 8 candidats :
   si ce minimum n’est pas atteint à la clôture des inscriptions, elle est
   annulée et l’intégralité des sommes avancées est remboursée sans frais.
   Les prochaines dates, les frais annexes et les modalités de règlement
   sont à confirmer auprès du club avant paiement.
   Le programme est présenté en cartes thématiques avec icônes SVG, numéros
-  de séance et points clés, sur deux colonnes lorsque l’espace le permet
+  de thème et points clés, sur deux colonnes lorsque l’espace le permet
   et une colonne sur les écrans étroits.
-- **[Compétitions](./pages/competitions.html)** : groupe d’entraînement,
+  La photo « Permis bateau » illustre le poste de pilotage en introduction.
+  Les photos de cartes marines et de bouées cardinales sont présentées dans
+  un bandeau au début du programme, hors des cartes des séances.
+  Leurs proportions sont conservées sans recadrage ; elles sont côte à côte
+  sur grand écran et empilées sur mobile.
+  La carte de l’accueil reprend la photo des cartes marines.
+  Ces photos d’illustration ne représentent pas les formations du club.
+  La photo du poste de pilotage remplace aussi le bateau en papier dans le récit
+  de Christian et son album du permis pratique ; sa légende précise qu’il ne
+  s’agit pas d’une photo de sa formation.
+- **[Régates](./pages/competitions.html)** : groupe d’entraînement,
   J80 au Havre et Grand Surprise à Cherbourg, coaching de Bernard (entraîneur
   fédéral), réunions techniques à Paris, prérequis sportifs et engagement annuel.
+  Une section met en valeur la 3e place au championnat de France entreprise
+  et la 2e place au challenge FFSE. Elle présente la photo fournie « Régate.jpg »,
+  conservée dans `regate-championnat-france.jpg`, sans recadrage ni suppression
+  de la signature de Patrick Deroualle.
   Le calendrier présente sept rendez-vous sans année précisée.
   Les prochaines dates et les frais sont
   à confirmer auprès du club ; le bulletin d’inscription est demandé par e-mail.
 - **[Mentions légales](./pages/mentions-legales.html)** : page dédiée avec sommaire
   et informations à compléter avant publication.
-- **[Retours d’expérience](./pages/retours-experience.html)** : quatre publications
-  du club (croisière, Chausey, voile légère et permis pratique), avec
+- **[Retours d’expérience](./pages/retours-experience.html)** : trois publications
+  du club (croisière, Chausey et permis pratique), avec
   résumés et liens vers les albums et activités. Les archives sont distinguées du
-  programme actuel. Quatre albums dépliables présentent 26 images, agrandissables
+  programme actuel.
+  Le permis pratique présente le récit complet de Christian, signé le 29 avril
+  2017, publié le 4 mai 2017 et mis à jour le 19 février 2021, dans une section
+  repliée par défaut, accessible avec « Lire le récit de Christian ».
+  Deux albums dépliables présentent 20 images, agrandissables
   dans une fenêtre superposée refermable avec la croix, Échap ou un clic à
   l’extérieur, sans changer de page ; la photo de croisière complète cette sélection.
   Les flèches latérales et les touches gauche/droite parcourent les photos du
@@ -76,16 +116,22 @@ fonctionnent directement depuis les fichiers locaux.
   commandes SVG circulaires. Le focus initial est placé sur la fenêtre plutôt
   que sur la fermeture ; les boutons conservent un focus visible au clavier et
   ne permettent pas la sélection de texte ni l’affichage d’un curseur de saisie.
-  L’onglet est accessible sur toutes les pages, depuis « Le club » sur l’accueil
+  L’onglet est accessible sur toutes les pages, depuis la page « Le club »
   et depuis les pages croisière et permis.
 - Les activités possèdent chacune leur propre page et leur onglet de navigation.
   Les cartes de l’accueil mènent directement à ces pages, sans fenêtre modale.
+  Les liens vers les autres activités en bas des pages croisière, permis et régates
+  reprennent ces cartes et leurs photos, sur deux colonnes puis une sur mobile.
 - Navigation commune, indication de l’activité courante, fil d’Ariane et liens
   entre les activités.
+- Logo officiel ATSCAF Grand Paris dans l’en-tête de toutes les pages, avec
+  un lien vers l’accueil et une taille adaptée aux mobiles.
 - Questions pratiques dépliables avec les éléments HTML natifs `details` et `summary`.
 - Calendriers à lignes alternées, texte contrasté et léger agrandissement au
   survol à la souris, désactivé si la réduction des animations est demandée.
 - Mise en page adaptée aux ordinateurs et aux mobiles.
+- Paragraphes descriptifs justifiés sur toutes les pages, sans modifier
+  l’alignement des titres, des menus ou des boutons.
 - Survols discrets, zoom des photos et transitions douces.
 - Respect de la préférence système de réduction des animations.
 - Liens vers les services d’adhésion existants et contact par e-mail.
@@ -138,9 +184,7 @@ atscaf-voiles/
         |   `-- regate.jpg
         `-- albums/
             |-- chausey/
-            |-- saint-quentin/
-            |-- journal-de-bord/
-            `-- permis-pratique/
+            `-- journal-de-bord/
 ```
 
 - [pages/](./pages/) contient les pages annexes.
@@ -155,9 +199,20 @@ atscaf-voiles/
   des retours d’expérience, en complément des styles communs et d’activités.
 - [site/](./assets/images/site/) contient les photos de présentation partagées
   par les pages. La copie identique de la photo de croisière a été supprimée.
-- [albums/](./assets/images/albums/) conserve les 26 images des quatre albums,
+  `logo-atscaf-voile.png` provient de l’image intégrée au document fourni
+  « Fiche info Permis Cotier 2027 - revu Z.docx », plus nette que « Logo.png ».
+  Seules les marges blanches superflues ont été retirées ; le dessin et ses
+  proportions sont conservés.
+  Trois photos fournies depuis le dossier « Images site ATSCAF VOILE » du Bureau
+  sont conservées en JPEG redimensionnés et compressés, sans modifier les originaux :
+  `permis-bateau.jpg` (« Permis bateau.jpg », Tahir Osman, Pexels 12059895),
+  `permis-carte-marine.jpg` (« Cartes marines.jpg », cottonbro, Pexels 5302807) et
+  `permis-balisage.jpg` (« Balisage.jpg », Pasha, Pexels 39511104).
+  Les crédits et les liens sources figurent dans les mentions légales.
+  Elles restent séparées des albums de sorties réelles du club.
+- [albums/](./assets/images/albums/) conserve les 20 images des deux albums,
   regroupées par sortie ou thème. Les noms des fichiers sont précédés d’un numéro
-  pour conserver leur ordre ; l’image du tournage est nommée `02-tournage-paris.jpg`.
+  pour conserver leur ordre.
   Chaque dossier contient un fichier `album.json` pour le titre, la description,
   l’ordre d’affichage et les éventuels textes propres à certaines photos.
   Les images sont locales, sans chargement distant ni lecteur vidéo intégré.
@@ -173,8 +228,8 @@ Le résultat est du **HTML statique complet** : navigation, contact et outils
 fonctionnent immédiatement, même sans JavaScript et en ouverture locale.
 Les chemins sont adaptés à chaque page, sans URL absolue liée à l’hébergement.
 L’onglet courant et le lien des mentions légales reçoivent automatiquement
-`aria-current="page"` ; les liens du club et de l’adhésion restent des ancres
-locales sur l’accueil.
+`aria-current="page"`, tout comme l’onglet « Le club » sur l’accueil.
+Les liens d’adhésion restent des ancres locales sur l’accueil.
 
 [journal.js](./assets/js/journal.js) génère les albums et les photos avec des
 boucles à partir de [albums.generated.js](./assets/js/albums.generated.js).
@@ -269,7 +324,7 @@ Les sous-dossiers imbriqués ne sont pas pris en charge.
   ```
 
   Dans les fichiers communs, écrire les liens et les chemins d’images depuis la
-  racine du projet (`pages/…`, `assets/…`, `index.html#club`). Le générateur les
+  racine du projet (`pages/…`, `assets/…`, `index.html#adherer`). Le générateur les
   rend relatifs à chaque page. Ne pas modifier les blocs générés directement :
   leurs changements seraient écrasés lors de la prochaine génération.
 - Pour une nouvelle page, reprendre les deux paires de commentaires `shared`
