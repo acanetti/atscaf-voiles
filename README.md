@@ -20,10 +20,12 @@ fonctionnent directement depuis les fichiers locaux.
 ## Pages et fonctionnalités
 
 - **[Accueil / Le club](./index.html)** : présentation de l’association et de la
-  vie en équipage avec la photo de Chausey, puis activités, adhésion, fonctionnement
+  vie en équipage avec la photo de Pandora sous spi, puis activités, adhésion, fonctionnement
   de la section et contact. La section « Le fonctionnement de la section »,
   accessible depuis la présentation du club, rappelle le principe du bénévolat,
   décrit l’organisation et présente les six membres du bureau et leurs fonctions.
+  La photo d’accueil reprend `assets/images/site/croisiere.jpg`,
+  également utilisée sur la page Croisière.
   Les modalités d’inscription sont regroupées dans le bandeau vert, à la place
   de l’ancien appel à demander le programme. « Le club » est le premier onglet du menu
   sur toutes les pages et indique la page courante sur l’accueil.
