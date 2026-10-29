@@ -42,9 +42,9 @@ html:has(.photo-dialog[open]) { overflow: hidden; }
 .photo-toolbar form { margin: 0; }
 #photo-position { font-size: 12px; font-variant-numeric: tabular-nums; letter-spacing: .12em; color: #ccd5d2; }
 .photo-stage { position: relative; display: flex; align-items: center; justify-content: center; height: min(72dvh, calc(100dvh - 180px), 760px); }
-.photo-dialog button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #ffffff30; border-radius: 50%; background: #102326b8; color: #fff; cursor: pointer; user-select: none; -webkit-user-select: none; }
+.photo-dialog button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #ffffff30; border-radius: 50%; background: var(--navy); color: #fff; cursor: pointer; user-select: none; -webkit-user-select: none; }
 .photo-dialog button svg { width: 22px; height: 22px; pointer-events: none; }
-.photo-dialog button:hover:not(:disabled) { background: #faf9f5; color: var(--ink); border-color: #faf9f5; }
+.photo-dialog button:hover:not(:disabled) { background: var(--navy-hover); border-color: #faf9f5; }
 .photo-dialog button:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
 .photo-arrow { position: absolute; top: calc(50% - 22px); z-index: 1; }
 .photo-arrow:disabled { opacity: .25; cursor: default; }
