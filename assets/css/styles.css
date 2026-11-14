@@ -19,7 +19,12 @@ em { font-weight: 400; }
 .wrap { width: min(1280px, calc(100% - 112px)); margin-inline: auto; }
 .section { padding-block: 94px; }
 .eyebrow { font-size: 10px; letter-spacing: .16em; font-weight: 650; line-height: 1.6; }
-.site-header { width: min(1440px, 100%); margin-inline: auto; min-height: 102px; padding: 20px 56px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.site-header { width: min(1440px, 100%); margin-inline: auto; min-height: 102px; padding: 20px 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; }
+.news-banner { order: 4; flex: 0 0 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 24px; padding: 14px 20px; border-radius: 6px; background: var(--lime); color: var(--ink); }
+.news-banner-label { flex-shrink: 0; padding: 5px 9px; border-radius: 20px; background: var(--ink); color: white; font-size: 10px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.news-banner p { flex: 1 1 280px; font-size: 13px; line-height: 1.7; text-align: left; }
+.news-banner > a { display: inline-flex; align-items: center; gap: 10px; padding-block: 7px; font-size: 12px; font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
+.news-banner > a:hover { text-decoration-thickness: 2px; }
 .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .brand-mark { width: 120px; height: auto; object-fit: contain; }
 .site-header nav { display: flex; flex-wrap: wrap; gap: 28px; }

@@ -16,7 +16,7 @@ async function fixture(t) {
   for (const name of ["header", "footer"]) {
     await copyFile(join(projectRoot, "partials", `${name}.html`), join(root, "partials", `${name}.html`));
   }
-  for (const file of ["index.html", "pages/club.html", "pages/croisiere.html", "pages/mentions-legales.html"]) {
+  for (const file of ["index.html", "pages/club.html", "pages/croisiere.html", "pages/mentions-legales.html", "pages/et-aussi.html"]) {
     await writeFile(join(root, file), `<!doctype html>
 <html lang="fr"><body>
   <!-- shared:header:start -->
@@ -33,13 +33,14 @@ async function fixture(t) {
 test("generates static layouts with relative URLs, home anchors and active page indicators", async (t) => {
   const options = await fixture(t);
   const pages = await generateLayout(options);
-  assert.equal(pages.length, 4);
+  assert.equal(pages.length, 5);
   const home = await readFile(join(options.projectDirectory, "index.html"), "utf8");
   assert.match(home, /class="brand" href="#accueil"/);
   assert.match(home, /<img class="brand-mark" src="assets\/images\/site\/logo-atscaf-voile\.png" alt="" width="195" height="158">/);
   assert.match(home, /<nav aria-label="Navigation principale">\s*<a href="#club" aria-current="page">Le club/);
   assert.match(home, /href="pages\/competitions\.html">Compétition/);
   assert.match(home, /href="#adherer"/);
+  assert.match(home, /href="pages\/permis\.html#inscription-title">Comment s’inscrire/);
   assert.match(home, /src="assets\/images\/outils\/ffv\.jpg"/);
   assert.equal([...home.matchAll(/aria-current="page"/g)].length, 1);
   const cruise = await readFile(join(options.projectDirectory, "pages", "croisiere.html"), "utf8");
@@ -58,6 +59,18 @@ test("generates static layouts with relative URLs, home anchors and active page 
   assert.match(club, /href="\.\.\/index\.html#club">Le club/);
   assert.match(club, /href="\.\.\/index\.html#adherer"/);
   assert.match(club, /src="\.\.\/assets\/images\/outils\/ffv\.jpg"/);
+  for (const page of pages) {
+    const html = await readFile(join(options.projectDirectory, page), "utf8");
+    assert.match(html, /href="(?:pages\/)?retours-experience\.html">Retours d’expérience<\/a>\s*<a href="(?:pages\/)?et-aussi\.html"(?: aria-current="page")?>Et aussi\.\.\.<\/a>/);
+    assert.equal([...html.matchAll(/class="news-banner"/g)].length, 1);
+    assert.match(html, /<time datetime="2026-11-30">30 novembre 2026<\/time>/);
+    if (page !== "index.html") {
+      assert.match(html, /href="permis\.html#inscription-title">Comment s’inscrire/);
+    }
+  }
+  const extras = await readFile(join(options.projectDirectory, "pages", "et-aussi.html"), "utf8");
+  assert.match(extras, /href="et-aussi\.html" aria-current="page">Et aussi\.\.\./);
+  assert.equal([...extras.matchAll(/aria-current="page"/g)].length, 1);
 });
 
 test("editing one partial updates every page without duplicating markup", async (t) => {

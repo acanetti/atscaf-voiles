@@ -19,6 +19,23 @@ fonctionnent directement depuis les fichiers locaux.
 
 ## Pages et fonctionnalités
 
+Un bandeau d’actualité sous la navigation, commun à toutes les pages, annonce les pré-inscriptions
+au permis côtier (session 2027), avant le 30 novembre 2026, avec un lien direct
+vers les modalités d’inscription. Son contenu se modifie dans
+[le header partagé](./partials/header.html) ; régénérer les blocs communs après
+modification. Actualiser ou retirer cette annonce après l’échéance.
+
+- **[Et aussi...](./pages/et-aussi.html)** : page accessible après « Retours
+  d’expérience » dans le menu, consacrée à la régate virtuelle, aux stages de
+  voile légère en partenariat avec le Club Nautique de Viry-Châtillon et aux
+  rencontres conviviales sur les bords de Seine. La voile légère est organisée
+  et encadrée par le partenaire, et non par la section voile de l’ATSCAF.
+  Les horaires de l’école de voile (mercredi 14 h–17 h, samedi 10 h–13 h
+  ou 14 h–17 h) proviennent de sa
+  [page officielle pour 2026–2027](https://viryvoile.com/ecole-de-voile/),
+  consultée le 14 novembre 2026. Le lien permet de vérifier le calendrier,
+  les disponibilités, les tarifs et les modalités d’inscription auprès de Viry.
+
 - **[Accueil / Le club](./index.html)** : présentation de l’association et de la
   vie en équipage avec la photo de Pandora sous spi, puis activités, adhésion, fonctionnement
   de la section et contact. La section « Le fonctionnement de la section »,
