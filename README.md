@@ -38,9 +38,17 @@ modification. Actualiser ou retirer cette annonce après l’échéance.
 
 - **[Accueil / Le club](./index.html)** : présentation de l’association et de la
   vie en équipage avec la photo de Pandora sous spi, puis activités, adhésion, fonctionnement
-  de la section et contact. La section « Le fonctionnement de la section »,
+  de la section et contact. L’introduction précise la saison de navigation de fin
+  mars à novembre, les relèves estivales et le partenariat avec le Club de Voile
+  de l’ASCO (ONERA), propriétaire de Pandora. La section « Le fonctionnement de la section »,
   accessible depuis la présentation du club, rappelle le principe du bénévolat,
   décrit l’organisation et présente les six membres du bureau et leurs fonctions.
+  Elle reprend aussi le projet présenté à l’assemblée générale du 21 novembre 2019 :
+  quatre objectifs (accessibilité, progression technique, accès à la voile en région
+  parisienne et compétition) et six dimensions complémentaires (croisière, école de
+  voile habitable, voile légère, compétition, permis et vie du club).
+  Les liens « Nos retours d’expérience » et « Les albums photo » se trouvent sous
+  les cartes de la section « Les activités du club ».
   La photo d’accueil reprend `assets/images/site/croisiere.jpg`,
   également utilisée sur la page Croisière.
   Les modalités d’inscription sont regroupées dans le bandeau vert, à la place
@@ -50,28 +58,50 @@ modification. Actualiser ou retirer cette annonce après l’échéance.
   ainsi que le bouton de demande du programme, ont été retirés.
   Les deux adhésions obligatoires sont
   distinguées : ATSCAF Grand Paris (cotisation séparée) et section voile
-  (73 € pour 2026–2027, licence FFVoile offerte), du 1er septembre au 31 août.
-  Les démarches, le règlement séparé du formulaire et la PAF par activité
-  sont précisés dans la section adhésion. Les coordonnées bancaires pour le
+  (73 € pour 2026–2027, licence FFVoile incluse), du 1er septembre au 31 août.
+  Les deux démarches d’adhésion et le règlement séparé du formulaire sont précisés
+  dans la section adhésion. Une courte note renvoie aux pages des activités pour
+  leurs éventuels frais supplémentaires. Les coordonnées bancaires pour le
   virement figurent dans cette même section.
 - L’ancienne adresse [club.html](./pages/club.html) redirige vers l’accueil
   pour préserver les liens existants.
 - **[Croisière](./pages/croisiere.html)** : présentation de Pandora, Sun Fast 36
   de l’ASCO basé à Saint-Malo, rythme des sorties et exemples de destinations ;
-  vie à bord, inscription et accès aux bulletins d’adhésion, liste d’équipement
+  vie à bord, lien vers les démarches d’adhésion sur l’accueil, liste d’équipement
   individuel (dont le prêt de cirés), organisation,
   budget, sécurité, entretien, formation des chefs de bord et conditions
   d’annulation.
+  Les conseils d’équipement et l’entretien de Pandora ont chacun une rubrique dépliable des
+  « Questions pratiques ».
+  La rubrique budget distingue la PAF, la caisse de bord partagée (nourriture et
+  port) et les dépenses personnelles, dont le transport.
+  Le déroulement d’un week-end précise la nuit à bord le vendredi, le départ le
+  samedi selon la marée, la nuit dans un autre port ou au mouillage, puis le retour
+  le dimanche après-midi et le nettoyage pour le bord suivant.
+  Les questions pratiques détaillent le covoiturage (camionnette ASCO sous réserve
+  de disponibilité ou voitures des équipiers), les rendez-vous et le départ
+  conseillé au plus tard à 17 h le vendredi, ainsi que l’avitaillement et les repas.
+  Elles rappellent les vêtements chauds même l’été et le prêt de cirés sous réserve
+  de disponibilité. La vie à bord décrit les tâches partagées, l’espace réduit et
+  le confort rustique du voilier de 11 m, sous la responsabilité d’un chef de bord qualifié.
   Le calendrier 2026 présente les bords d’automne et les croisières d’été,
   précédés d’une présentation du rythme annuel : week-ends de printemps et
-  d’automne au départ de Saint-Malo, hivernage et croisières estivales généralement
+  d’automne, de fin mars à novembre au départ de Saint-Malo, hivernage et croisières estivales généralement
   d’une semaine, parfois hors de France.
   Il indique aussi les périodes sans bord et le désarmement. Le planning de printemps
   n’est pas disponible. Les dates sont statiques, sans suivi des disponibilités ;
   actualiser les tableaux lors d’une modification du programme.
-- **[Permis côtier](./pages/permis.html)** : parcours de formation (16 h de
+- **[Formation](./pages/permis.html)** : présentation succincte du permis côtier,
+  avec un lien vers sa page dédiée, préparation au permis hauturier (travail sur
+  la carte et calcul de marée) et école de voile habitable. Cette dernière propose
+  cinq jours pour travailler les fondamentaux et aider les adhérents à se perfectionner,
+  sur des bateaux plus maniables que Pandora, encadrés par les moniteurs FFV du club.
+  Les dates, disponibilités et tarifs sont à confirmer auprès du club.
+- **[Permis côtier](./pages/permis-cotier.html)** : parcours de formation (16 h de
   préparation, 6 h de révision et 2 h de pilotage), programme des huit séances,
   modalités de pré-inscription, pièces du dossier et liens vers les CERFA.
+  Cette page est accessible depuis la page Formation et les liens consacrés au
+  permis côtier, mais n’a pas d’onglet dans la navigation principale.
   Selon la fiche Word « Fiche info Permis Cotier 2027 - revu Z.docx », la session
   2027 comprend sept séances regroupées sur deux jours, sur un ou deux week-ends,
   au CISP Kellermann, à Paris 13e. La période envisagée est le dernier week-end
@@ -156,8 +186,9 @@ modification. Actualiser ou retirer cette annonce après l’échéance.
 - Survols discrets, zoom des photos et transitions douces.
 - Respect de la préférence système de réduction des animations.
 - Liens vers les services d’adhésion existants et contact par e-mail.
-- Pied de page commun avec une rangée discrète de liens vers FFVoile, Windguru (prévisions de vent)
-  et PassageWeather (météo marine). Les logos sont conservés localement dans
+- Pied de page commun avec deux groupes de liens : « Affiliation » pour FFVoile
+  et [FFSE](https://ffse.fr/), puis « Les outils du navigateur » pour Windguru
+  (prévisions de vent) et PassageWeather (météo marine). Les logos sont conservés localement dans
   [outils/](./assets/images/outils/), séparément des albums, et les liens utilisent HTTPS.
 
 Il n’y a ni serveur applicatif, ni base de données, ni espace membre, ni
@@ -173,6 +204,7 @@ atscaf-voiles/
 |-- pages/
 |   |-- croisiere.html
 |   |-- permis.html
+|   |-- permis-cotier.html
 |   |-- competitions.html
 |   |-- retours-experience.html
 |   `-- mentions-legales.html

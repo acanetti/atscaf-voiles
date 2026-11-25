@@ -112,7 +112,9 @@ h1 em { color: #71836d; }
 .club-organisation-intro p { font-size: 13px; line-height: 1.9; color: var(--muted); }
 .club-organisation-intro p + p { margin-top: 16px; }
 .club-organisation-intro strong { color: var(--ink); }
-.club-bureau h3 { margin: 0 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 400; }
+.club-project { margin-top: 28px; }
+.club-project .activity-checklist li { margin-top: 0; }
+.club-bureau h3, .club-project h3 { margin: 0 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 400; }
 .bureau-list { list-style: none; margin: 0; padding: 0; }
 .bureau-list li { padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 13px; line-height: 1.6; }
 .bureau-list span { color: var(--muted); }
@@ -126,7 +128,7 @@ h1 em { color: #71836d; }
 .join-intro > .eyebrow { font-size: 12px; }
 .join-intro > p:not(.eyebrow) { color: var(--muted); font-size: 13px; line-height: 1.8; }
 .join-intro #reglement, .join-intro #reglement + p { margin-top: 16px; }
-.join-intro #reglement + p a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.join-intro #reglement + p a, .join-activities-note a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .price { display: flex; align-items: center; justify-content: center; gap: 15px; margin-block: 25px 16px; color: #1e4f91; font-weight: 700; }
 .price strong { font-family: "Segoe UI", Arial, sans-serif; font-size: 46px; font-weight: 700; letter-spacing: -.04em; white-space: nowrap; }
 .price span { font-size: 14px; line-height: 1.7; color: inherit; }
@@ -139,6 +141,7 @@ h1 em { color: #71836d; }
 .step-arrow { margin-left: auto; font-size: 23px; transition: transform .3s var(--ease); }
 .join-step:hover { padding-inline: 12px; background: #e8ecd940; }
 .join-step:hover .step-arrow { transform: translate(3px,-3px); }
+.join-activities-note { margin-top: 20px; color: var(--muted); font-size: 13px; line-height: 1.8; }
 footer { background: var(--ink); color: var(--paper); }
 .footer-main { padding-block: 60px; display: flex; align-items: center; justify-content: space-between; }
 .footer-main .eyebrow { color: #d1dcbc; }

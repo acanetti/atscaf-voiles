@@ -16,7 +16,7 @@ async function fixture(t) {
   for (const name of ["header", "footer"]) {
     await copyFile(join(projectRoot, "partials", `${name}.html`), join(root, "partials", `${name}.html`));
   }
-  for (const file of ["index.html", "pages/club.html", "pages/croisiere.html", "pages/mentions-legales.html", "pages/et-aussi.html"]) {
+  for (const file of ["index.html", "pages/club.html", "pages/croisiere.html", "pages/permis.html", "pages/permis-cotier.html", "pages/mentions-legales.html", "pages/et-aussi.html"]) {
     await writeFile(join(root, file), `<!doctype html>
 <html lang="fr"><body>
   <!-- shared:header:start -->
@@ -33,14 +33,14 @@ async function fixture(t) {
 test("generates static layouts with relative URLs, home anchors and active page indicators", async (t) => {
   const options = await fixture(t);
   const pages = await generateLayout(options);
-  assert.equal(pages.length, 5);
+  assert.equal(pages.length, 7);
   const home = await readFile(join(options.projectDirectory, "index.html"), "utf8");
   assert.match(home, /class="brand" href="#accueil"/);
   assert.match(home, /<img class="brand-mark" src="assets\/images\/site\/logo-atscaf-voile\.png" alt="" width="195" height="158">/);
   assert.match(home, /<nav aria-label="Navigation principale">\s*<a href="#club" aria-current="page">Le club/);
   assert.match(home, /href="pages\/competitions\.html">Compétition/);
   assert.match(home, /href="#adherer"/);
-  assert.match(home, /href="pages\/permis\.html#inscription-title">Comment s’inscrire/);
+  assert.match(home, /href="pages\/permis-cotier\.html#inscription-title">Plus d’info/);
   assert.match(home, /src="assets\/images\/outils\/ffv\.jpg"/);
   assert.equal([...home.matchAll(/aria-current="page"/g)].length, 1);
   const cruise = await readFile(join(options.projectDirectory, "pages", "croisiere.html"), "utf8");
@@ -59,13 +59,28 @@ test("generates static layouts with relative URLs, home anchors and active page 
   assert.match(club, /href="\.\.\/index\.html#club">Le club/);
   assert.match(club, /href="\.\.\/index\.html#adherer"/);
   assert.match(club, /src="\.\.\/assets\/images\/outils\/ffv\.jpg"/);
+  const formation = await readFile(join(options.projectDirectory, "pages", "permis.html"), "utf8");
+  assert.match(formation, /href="permis\.html" aria-current="page">Formation/);
+  const coastal = await readFile(join(options.projectDirectory, "pages", "permis-cotier.html"), "utf8");
+  const coastalNavigation = coastal.match(/<nav aria-label="Navigation principale">([\s\S]*?)<\/nav>/)[1];
+  assert.match(coastalNavigation, /href="permis\.html">Formation/);
+  assert.doesNotMatch(coastalNavigation, /href="permis-cotier\.html"/);
   for (const page of pages) {
     const html = await readFile(join(options.projectDirectory, page), "utf8");
+    assert.match(html, /<a class="footer-tool" href="https:\/\/ffse\.fr\/"><img src="(?:\.\.\/)?assets\/images\/outils\/ffse\.png" alt="" width="633" height="594" loading="lazy"><span><strong>FFSE<\/strong>/);
+    const footerGroups = [...html.matchAll(/<section class="footer-tools wrap" aria-labelledby="([^"]+)">\s*<h2 id="\1">([^<]+)<\/h2>([\s\S]*?)<\/section>/g)];
+    assert.deepEqual(footerGroups.map(([, , title, content]) => ({
+      title,
+      links: [...content.matchAll(/<a class="footer-tool" href="([^"]+)"/g)].map(([, href]) => href),
+    })), [
+      { title: "Affiliation", links: ["https://www.ffvoile.fr/ffv/web/portail/", "https://ffse.fr/"] },
+      { title: "Les outils du navigateur", links: ["https://www.windguru.cz/112", "https://www.passageweather.com/"] },
+    ]);
     assert.match(html, /href="(?:pages\/)?retours-experience\.html">Retours d’expérience<\/a>\s*<a href="(?:pages\/)?et-aussi\.html"(?: aria-current="page")?>Et aussi\.\.\.<\/a>/);
     assert.equal([...html.matchAll(/class="news-banner"/g)].length, 1);
     assert.match(html, /<time datetime="2026-11-30">30 novembre 2026<\/time>/);
     if (page !== "index.html") {
-      assert.match(html, /href="permis\.html#inscription-title">Comment s’inscrire/);
+      assert.match(html, /href="permis-cotier\.html#inscription-title">Plus d’info/);
     }
   }
   const extras = await readFile(join(options.projectDirectory, "pages", "et-aussi.html"), "utf8");
